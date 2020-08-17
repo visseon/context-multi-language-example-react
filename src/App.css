@@ -1,5 +1,9 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .App-logo {
@@ -35,4 +39,67 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.card {
+  background-color: whitesmoke;
+  margin: 16px;
+  padding: 32px;
+  border-radius: 16px;
+  width: 400px;
+  align-self: center;
+}
+
+.inputContainer {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  flex-direction: column;
+}
+.label {
+  font-size: 18px;
+}
+
+.input {
+  margin-top: 8px;
+  border-radius: 4px;
+  border-width: 0px;
+  height: 43px;
+  font-size: 18px;
+  padding-left: 16px;
+}
+.button {
+  padding: 16px;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  border-radius: 4px;
+  background-color: crimson;
+}
+
+.button-title {
+  font-size: 18px;
+  line-height: 21px;
+  color: white;
+}
+
+.languageGroup{
+  display: flex;
+  width: 400px;
+  margin-top: 16px;
+  flex-direction: row;
+}
+
+.language {
+  padding: 8px;
+  padding-left: 14.3px;
+  padding-right: 14.3px;
+  color: white;
+  border-radius: 4px;
+  margin-right: 16px;
+  background-color: rgb(255, 102, 7);
+}
+
+body {
+  background-color: #3366FF;
 }

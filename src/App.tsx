@@ -1,26 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useTranslations } from 'context-multi-language';
 import './App.css';
 
 function App() {
+  const { t, changeLanguage, languages } = useTranslations();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="card">
+        <Input label={t?.phoneNumber} />
+        <Input label={t?.password} />
+        <div className="button">
+          <span className="button-title">{t?.signIn}</span>
+        </div>
+        <div className="languageGroup">
+          {languages?.map((lang) => (
+            <div className="language" onClick={() => changeLanguage(lang)}>
+              {lang}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
+
+const Input = ({ label }: { label: string }) => (
+  <div className="inputContainer">
+    <span className="label">{label}</span>
+    <input className="input" />
+  </div>
+);
 
 export default App;
